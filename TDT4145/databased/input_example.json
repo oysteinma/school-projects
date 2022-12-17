@@ -1,0 +1,64 @@
+{
+  "Bruker": [
+    {
+      "Epost": "elsker.vinterkaffe@email.com",
+      "Passord": "superhemmelig123",
+      "FulltNavn": "Ola Nordmann"
+    }
+  ],
+  "Brenneri": [
+    {
+      "BrenneriID": 101,
+      "Navn": "Jacobsen & Svart"
+    }
+  ],
+  "Gaard": [
+    {
+      "GaardsID": 101,
+      "Navn": "Nombre de Dios",
+      "HoeydeOverHavet": 1500,
+      "Region": "Santa Ana",
+      "Land": "El Salvador"
+    }
+  ],
+  "Kaffe": [
+    {
+      "KaffeID": 101,
+      "Navn": "Vinterkaffe 2022",
+      "Brenningsgrad": "lys",
+      "Beskrivelse": "En velsmakende og kompleks kaffe for mørketiden",
+      "KiloPris": "600",
+      "Dato": "2022-01-20",
+      "BrenneriID": 1,
+      "PartiID": 1
+    }
+  ],
+  "Kaffesmaking": [
+    {
+      "Notater": "Wow – en odyssé for smaksløkene: sitrusskall, melkesjokolade, aprikos!",
+      "Poeng": 10,
+      "Epost": "elsker.vinterkaffe@email.com",
+      "KaffeID": 101
+    }
+  ],
+  "Parti": [
+    {
+      "PartiID": 101,
+      "InnhoestingsAar": "2021",
+      "BetaltUSD": 8,
+      "GaardsID": 101,
+      "MetodeNavn": "bærtørket Bourbon"
+    }
+  ],
+  "ForedlingsMetode": [
+    {
+      "MetodeNavn": "bærtørket Bourbon"
+    }
+  ],
+  "inneholder": [
+    {
+      "ArtsNavn": "coffea arabica",
+      "PartiID": 101
+    }
+  ]
+}

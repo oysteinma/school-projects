@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Kaffegutane",
+            "group": "Kjell",
+            "database": "${workspaceFolder:databased}/kaffeDB.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
