@@ -11,3 +11,4 @@ Some indivdual and group projects I have worked on during my time at NTNU.
   - [Project 2](TDT4225/databased3): MongoDB
 - [IT2810](IT2810): Web Development
   - [Project 1](IT2810/prosjekt-1) (Individual)
+  - [Project 2](IT2810/prosjekt-2) (Group)
