@@ -1,0 +1,35 @@
+# Old GITPOD.YML
+
+# image:
+#   file: .gitpod.Dockerfile
+# tasks:
+#   # flashy terminal
+#   - init: sdk use java 16.0.1.hs-adpt
+#     command: |
+#       cd flashy
+#       mvn install -Dmaven.test.skip=true
+
+# # flashy client terminal
+#   - name: flashy_client
+#     command: |
+#       cd flashy_client
+#       flutter upgrade
+#       flutter pub get
+#       alias run-client='flutter run -d web-server --web-port=8081'
+
+# ports:
+#   # VNC
+#   - port: 6080
+
+#   # REST API
+#   - port: 8080
+#     onOpen: ignore
+
+#   # Flutter Chrome Connection
+#   - port: 8081
+#     onOpen: open-browser
+
+# vscode:
+#   extensions:
+#     - dart-code.flutter
+#     - vscjava.vscode-java-pack

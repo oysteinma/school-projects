@@ -1,0 +1,87 @@
+/* Importer all css fra hovedstylesheet style.css */
+@import url("style.css");
+
+.styret-flex {
+  display: flex;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.styret-nav {
+  min-width: 25%;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 129px;
+}
+
+.styret h2 {
+  margin-right: 5px;
+}
+
+.styret-person {
+  display: grid;
+  grid-template-columns: 2fr 0.6fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  grid-template-areas:
+    "name img"
+    "description img";
+  margin-bottom: 2rem;
+}
+
+.styret-person-img {
+  grid-area: img;
+  margin-top: 5px;
+  height: auto;
+  width: 100%;
+  min-width: 200px;
+  border-radius: 4px;
+}
+
+.styret-person-description {
+  grid-area: description;
+}
+
+.styret-person-name {
+  grid-area: name;
+}
+
+.styret-nav a {
+  line-height: 1.2;
+  font-size: 18px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.styret-nav a:hover {
+  font-weight: bold;
+}
+
+#Revysjef,
+#Revysjef2,
+#Regissør,
+#Arrangementansvarlig,
+#Økonomiansvarlig,
+#Soppen,
+#Scenesjef,
+#Kosesjef_HR,
+#Medieansvarlig {
+  scroll-margin-top: 125px;
+}
+
+/* Gjør layouten responsiv på mindre enheter */
+@media screen and (max-width: 680px) {
+  .styret-person {
+    grid-template-areas:
+      "img ."
+      "name name"
+      "description description";
+  }
+
+  .styret-nav {
+    display: none;
+  }
+}

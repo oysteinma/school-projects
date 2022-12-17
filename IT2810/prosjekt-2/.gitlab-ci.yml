@@ -1,0 +1,26 @@
+# Old CI/CD
+
+# image: node:16.17.0
+
+# stages:
+#   - format
+#   - test
+
+# prettier:
+#   stage: format
+#   script:
+#     - echo "Checking formatting..."
+#     - cd gitview
+#     - npm install prettier pretty-quick
+#     - npm run pretty-quick
+#     - echo "Formatting successful!"
+
+# code-coverage:
+#   stage: test
+#   script:
+#     - echo "Testing and collecting code coverage..."
+#     - cd gitview
+#     - npm install
+#     - npm run updateSnapshot -- --coverage
+#     - echo "Testing successful!"
+#   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/

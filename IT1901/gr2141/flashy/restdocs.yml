@@ -1,0 +1,135 @@
+# Denne ligger her på grunn av https://piazza.com/class/kssraggjcxm4at?cid=586
+swagger: "2.0"
+info:
+  description: "This is the backend rest server for the flashcard application Flashy. This site contains information for relevant requests to the server. If you'd like to create a new client with our REST-service you have come to the right place!"
+  version: "1.0.0"
+  title: "Backend Rest Server"
+tags:
+- name: "Card Deck"
+  description: "Everything about the card decks"
+
+
+paths:
+  /flashy/deck/:
+    get:
+      tags:
+      - "Card Deck"
+      summary: "Reads all the card decks"
+      description: "Returns a list with the card decks"
+      operationId: "getAllDecks()"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/CardDeck"
+        "400":
+          description: "A problem occured while reading the file. Although this should have been a 500, the server returns a 400. Unfortunately, we prioritized our time into fixing more important issues"
+        "404":
+          description: "File not found"
+     
+    
+  /flashy/deck/{index}:
+    get:
+      tags:
+      - "Card Deck"
+      summary: "Reads the card deck at the specific index"
+      description: "Returns a single card deck"
+      operationId: "getCurrentCardDeck(id)"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "index"
+        description: "Integer that represents which card deck to get"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/CardDeck"
+        "400":
+          description: "A problem occured while reading the file. Although this should have been a 500, the server returns a 400. Unfortunately, we prioritized our time into fixing more important issues"
+        "404":
+          description: "File not found or file broken"
+    post:
+      tags:
+      - "Card Deck"
+      summary: "Add a card deck at the specific index"
+      description: ""
+      operationId: "saveCurrentCardDeck(deck,id)"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "index"
+        in: "path"
+        description: "Integer that represents where to post the card deck"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "body"
+        description: "Card deck object that gets added to the given index"
+        required: true
+        schema:
+          $ref: "#/definitions/CardDeck"
+      responses:
+        "200":
+          description: "Whether or not writing the CardDeck to disk was successful"
+          schema:
+            type: boolean
+
+      
+  /flashy/deck/new:      
+    put:
+      tags:
+      - "Card Deck"
+      summary: "Add a new card deck at the specific index"
+      description: ""
+      operationId: "saveCurrentCardDeck(deck)"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Card deck object that gets added to the next available index"
+        required: true
+        schema:
+          $ref: "#/definitions/CardDeck"
+      responses:
+        "200":
+          description: "Whether or not writing the CardDeck to disk was successful"
+          schema:
+            type: boolean
+
+definitions:
+  CardContent:
+    type: "object"
+    properties:
+      lines:
+        type: "array"
+        items:
+          type: "string"
+          
+  Flashcard:
+    type: "object"
+    properties:
+      front:
+        $ref: "#/definitions/CardContent"
+      back:
+        $ref: "#/definitions/CardContent"
+          
+  CardDeck:
+    type: "object"
+    properties:
+      flashcards:
+        type: "array"
+        items:
+          $ref: "#/definitions/Flashcard"

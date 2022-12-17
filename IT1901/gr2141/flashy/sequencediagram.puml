@@ -1,0 +1,13 @@
+@startuml
+actor User
+User -> "~#Writefront & Writeback: TextField" : write term and definition
+User -> "~#Add Card: Button" as newTodoItemButton: click
+newTodoItemButton -> MenuController : handleCreateFlashCard
+MenuController -> FlashcardProvider: getCardDeck
+FlashcardProvider -> CardDeck: add
+MenuController-> "~#Writefront & Writeback: TextField" : getText
+CardDeck-> FlashcardProvider : updateSubscribers
+FlashcardProvider -> CardDeckStorage: writeDeck
+CardDeckStorage -> "REST-API": POST
+MenuController-> "~#Writefront & Writeback: TextField" : clearText
+@enduml

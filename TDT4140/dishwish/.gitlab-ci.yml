@@ -1,0 +1,64 @@
+# Old CI/CD
+
+# image: node
+
+# stages:
+#   - format
+#   - coverage
+#   - deploy
+
+# prettier:
+#   stage: format
+#   script:
+#     - cd dishwish
+#     - npm i prettier pretty-quick
+#     - npm run pretty-quick:check
+
+# eslint:
+#   stage: format
+#   script:
+#     - cd dishwish
+#     - npm i eslint
+#     - npm run eslint:check
+
+# unit-test-coverage:
+#   stage: coverage
+#   script:
+#     - cd dishwish
+#     - npm ci
+#     - CI=true npm test -- --coverage
+#   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+#   artifacts:
+#     paths:
+#       - dishwish/coverage/
+#     expire_in: 3 mins
+
+# pages:
+#   stage: coverage
+#   needs: [unit-test-coverage]
+#   script:
+#     - mkdir public
+#     - mkdir public/coverage
+#     - mv dishwish/coverage/* public/coverage/
+#   artifacts:
+#     paths:
+#       - public
+#     expire_in: 3 mins
+#   only:
+#     - main
+
+# heroku:
+#   stage: deploy
+#   image: ruby:latest
+#   script:
+#     - cd dishwish
+#     - git init
+#     - git config user.email "you@example.com"
+#     - git config user.name "Your Name"
+#     - git remote add heroku https://heroku:a7068d9f-5d5e-44d9-8186-6b1b91d7d6e4@git.heroku.com/dishwish.git
+#     - git add .
+#     - git commit -am "deploy"
+#     - git push heroku master --force
+#     - rm -rf .git
+#   only:
+#     - main

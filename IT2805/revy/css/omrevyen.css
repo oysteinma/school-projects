@@ -1,0 +1,39 @@
+/* Importer all css fra hovedstylesheet style.css */
+@import url("style.css");
+
+.omrevyen {
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+.omrevyen-wrapper {
+  /* 
+   * Denne wrapperen gjør at vi får en horisontal layout
+   */
+  display: flex;
+  gap: 25px;
+  min-height: 530px;
+  margin-top: 10px;
+}
+
+.omrevyen-images {
+  /*
+   * Denne legger bildene vertikalt etter hverandre 
+   */
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.omrevyen-images > img {
+  width: 350px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* Gjør layouten mer vennlig på mindre enheter */
+@media screen and (max-width: 680px) {
+  .omrevyen-wrapper {
+    flex-wrap: wrap;
+  }
+}

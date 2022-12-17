@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.CheckMenuItem?>
+
+<MenuBar
+  fx:id="menubar"
+  prefHeight="25.0"
+  xmlns="http://javafx.com/javafx/8.0.65"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="app.controllers.MenubarController">
+  <menus>
+    <Menu mnemonicParsing="false" text="File">
+      <items>
+        <MenuItem mnemonicParsing="false" text="New File" accelerator="Shortcut+n" onAction="#handleNewFile"/>
+        <SeparatorMenuItem/>
+        <MenuItem mnemonicParsing="false" text="Open File" accelerator="Shortcut+o" onAction="#handleOpenFile"/>
+        <MenuItem mnemonicParsing="false" text="Open Project" accelerator="Shortcut+Shift+O" onAction="#handleOpenProject"/>
+        <SeparatorMenuItem/>
+        <MenuItem mnemonicParsing="false" text="Save" accelerator="Shortcut+s" onAction="#handleSaveFile"/>
+        <MenuItem mnemonicParsing="false" text="Save as" accelerator="Shortcut+Shift+S" onAction="#handleSaveAsFile"/>
+        <SeparatorMenuItem/>
+
+        <fx:define>
+          <ToggleGroup fx:id="languageToggleGroup"/>  
+        </fx:define>
+
+        <Menu mnemonicParsing="false" text="Change programming language">
+          <items>
+            <RadioMenuItem text="Java"
+                           fx:id="toggleJava"
+                           onAction="#handleLanguageChange"
+                           toggleGroup="$languageToggleGroup"/>
+            <RadioMenuItem text="Markdown"
+                           fx:id="toggleMarkdown"
+                           onAction="#handleLanguageChange"
+                           toggleGroup="$languageToggleGroup"/>
+          </items>
+        </Menu>
+
+        <SeparatorMenuItem/>
+        <CheckMenuItem mnemonicParsing="false" text="Wrap text" accelerator="Alt+z" onAction="#handleToggleWraptext"/>
+        <SeparatorMenuItem/>
+
+        <fx:define>
+          <ToggleGroup fx:id="themeToggleGroup"/>  
+        </fx:define>
+
+        <Menu mnemonicParsing="false" text="Change color theme">
+          <items>
+            <RadioMenuItem text="Monokai"
+                           fx:id="toggleMonokai"
+                           onAction="#handleThemeChange"
+                           toggleGroup="$themeToggleGroup"/>
+            <RadioMenuItem text="Solarized Light"
+                           fx:id="toggleSolarized_Light"
+                           onAction="#handleThemeChange"
+                           toggleGroup="$themeToggleGroup"/>
+          </items>
+        </Menu>
+
+        <SeparatorMenuItem/>
+        <MenuItem mnemonicParsing="false" text="Exit" accelerator="Shortcut+w" onAction="#handleExitApplication"/>
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Edit">
+      <items>
+        <MenuItem mnemonicParsing="false" text="Undo" accelerator="Shortcut+z" onAction="#handleUndo"/>
+        <MenuItem mnemonicParsing="false" text="Redo" accelerator="Shortcut+y" onAction="#handleRedo"/>
+        <SeparatorMenuItem/>
+        <MenuItem mnemonicParsing="false" text="Cut" accelerator="Shortcut+x" onAction="#handleCut"/>
+        <MenuItem mnemonicParsing="false" text="Copy" accelerator="Shortcut+c" onAction="#handleCopy"/>
+        <MenuItem mnemonicParsing="false" text="Paste" accelerator="Shortcut+v" onAction="#handlePaste"/>
+        <SeparatorMenuItem/>
+        <MenuItem mnemonicParsing="false" text="Find" accelerator="Shortcut+f"/>
+        <MenuItem mnemonicParsing="false" text="Replace" accelerator="Shortcut+h"/>
+        <SeparatorMenuItem/>
+        <MenuItem mnemonicParsing="false" text="Toggle line comment" accelerator="Shortcut+k" onAction="#handleToggleComment"/>
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Help">
+      <items>
+        <MenuItem mnemonicParsing="false" text="About" accelerator="f1" onAction="#handleAbout"/>
+      </items>
+    </Menu>
+  </menus>
+</MenuBar>

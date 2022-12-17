@@ -1,0 +1,202 @@
+/* --------------------------------- Colors --------------------------------- */
+
+:root {
+  --background-color: #1d1d27;
+  --section-color: #2b2b35;
+  --button-color: #fd365f;
+  --hover-color: #d73757;
+  --text-color: #ffffff;
+  --head-color: #ffd535;
+  --face-color: #0e0d0d;
+  --tear-color: #46d4f3;
+  --teeth-color: #fff7f7;
+}
+
+/* --------------------------------- GENERAL/LAYOUT --------------------------------- */
+
+html,
+body {
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 30px;
+}
+
+.grid > * {
+  justify-self: center;
+  background-color: var(--background-color);
+  fill: var(--background-color);
+}
+
+.title,
+.information,
+.toggledocumentation,
+.documentation {
+  grid-column: span 2;
+}
+
+h2 {
+  text-align: center;
+}
+
+.h2 {
+  text-align: center;
+}
+
+.information,
+.documentation {
+  border-style: solid;
+  background-color: var(--section-color);
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 20px;
+}
+
+.documentation {
+  display: none;
+  margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .svg,
+  .canvas {
+    grid-column: span 2;
+  }
+}
+
+#button {
+  font-family: inherit;
+  font-weight: 550;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 20px;
+  border-style: hidden;
+  border-radius: 20px;
+}
+
+#button:hover {
+  --button-color: var(--hover-color);
+  cursor: pointer;
+}
+
+a:link {
+  color: #fd365f;
+}
+
+a:visited {
+  color: #ffc0cb;
+}
+
+a:hover {
+  color: #d73789;
+}
+
+a:active {
+  color: #ff0000;
+}
+
+/* --------------------------------- ANIMATION/COLOR SVG --------------------------------- */
+
+#angryface,
+#happyface {
+  fill: var(--head-color);
+}
+
+#angrysmile,
+#angryeye1,
+#angryeye2,
+#happysmile,
+#happyeye1,
+#happyeye2 {
+  fill: var(--face-color);
+}
+
+#tears {
+  fill: var(--tear-color);
+}
+
+#teeth {
+  fill: var(--teeth-color);
+}
+
+#tears,
+#teeth,
+#angryface {
+  visibility: hidden;
+}
+
+svg:not(:hover) #happyface {
+  fill: #ffd535;
+}
+
+svg:hover,
+#myCanvas {
+  cursor: pointer;
+}
+
+svg:hover #happyface {
+  visibility: hidden;
+}
+
+svg:hover #tears,
+svg:hover #teeth,
+svg:hover #angryface {
+  visibility: visible;
+}
+
+svg:hover #angryhead,
+svg:hover #angryeye1,
+svg:hover #angryeye2 {
+  animation: shake 0.5s infinite;
+}
+
+svg:hover #teeth,
+svg:hover #angrysmile {
+  animation: moveSmile 3s ease infinite;
+}
+
+svg:hover #tears {
+  animation: tearsRotate 3s ease infinite;
+}
+
+@keyframes tearsRotate {
+  10% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-2deg);
+  }
+  70% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes moveSmile {
+  30% {
+    transform: translateY(2%);
+  }
+  40%,
+  100% {
+    transform: translateY(4%);
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  to {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+}

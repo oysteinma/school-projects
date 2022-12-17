@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+
+<HBox 
+      prefHeight="35.0" 
+      xmlns="http://javafx.com/javafx/8.0.65" 
+      xmlns:fx="http://javafx.com/fxml/1"  
+      alignment="CENTER"
+      fx:controller="it1901.groups2021.gr2141.ui.controllers.NavbarController"> 
+    <children>
+      <!-- Used for later iterations 
+      <ToggleButton fx:id="btnHamburger">
+        <graphic>
+          <MaterialIconView fx:id="hamburger" glyphName="MENU" size="18px"/>
+      </graphic>
+      </ToggleButton>
+      -->
+      <Region HBox.hgrow="ALWAYS" />
+      <Label alignment="CENTER" fx:id="header" text="FLASHY" />
+      <Region HBox.hgrow="ALWAYS" />
+      <HBox>
+        <children>
+          <!-- Used for later iterations 
+          <ToggleButton fx:id="btnFavourites">
+            <graphic>
+              <MaterialIconView fx:id="favourites" glyphName="STAR_BORDER" size="18px"/>
+          </graphic>
+          </ToggleButton>
+          -->
+          <ToggleButton fx:id="btnToggleFirstLastWrapAroundMode" onAction="#handleToggleFirstLastWrapAroundMode">
+            <graphic>
+              <MaterialIconView fx:id="toggleFirstLastWrapAroundMode" glyphName="REPEAT" size="18px"/>
+          </graphic>
+          </ToggleButton>
+          <ToggleButton fx:id="btnToggleRandomMode" onAction="#handleToggleCardOrderIsRandom">
+            <graphic>
+              <MaterialIconView fx:id="toggleRandomMode" glyphName="SHUFFLE" size="18px"/>
+          </graphic>
+          </ToggleButton>
+          <ToggleButton fx:id="btnToggleShowOtherSide" onAction="#handleToggleShowOtherSide">
+            <graphic>
+              <MaterialIconView fx:id="toggleShowOtherSide" glyphName="SWAP_HORIZ" size="18px"/>
+          </graphic>
+          </ToggleButton>
+        </children>
+      </HBox>
+    </children>
+  </HBox>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ToolBar?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+
+<VirtualizedScrollPane
+  xmlns="http://javafx.com/javafx/8.0.65"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="app.controllers.EditorController">
+  <content>
+    <CodeArea fx:id="editor"/>
+  </content>
+</VirtualizedScrollPane>

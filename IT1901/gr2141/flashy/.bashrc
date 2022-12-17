@@ -1,0 +1,1 @@
+export term=xterm-color

@@ -1,0 +1,244 @@
+@import url("style.css");
+
+.gallery {
+  /*
+   * Vertikal wrapper for galleri som plasserer elementene vertikalt
+   * etter hverandre med en gitt avstand.
+   */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gallery-grid {
+  /*
+   * Grid som blir brukt i galleriet både for preview bilder og
+   * for resterende bilder. Bygget opp av 4 kolonner og n rader
+   * som fyller plassen på siden. Elementene blir sentrert i cellene.
+   */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 5px;
+}
+
+.gallery-grid-left {
+  /*
+   * Plasserer et grid element til venstre og lar
+   * elementet strekke seg over 2x2 rader/kolonner.
+   * x x - -
+   * x x - -
+   */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery-grid-right {
+  /*
+   * Plasserer et grid element til høyre og lar
+   * elementet strekke seg over 2x2 rader/kolonner.
+   * - - x x
+   * - - x x
+   */
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery-grid-remaining-hide {
+  /*
+   * Skuler dette grid elementet 'by default' og lar brukeren
+   * vise det ved å klikke på årsbildet.
+   */
+  display: none;
+}
+
+.gallery-grid-remaining-border {
+  /*
+   * Legger til et skille mellom årsgrid når man har åpnet resterende bilder
+   * for å lettere se når man går over til neste års bilde da disse er
+   * annenhvert år høyre/venstre.
+   *
+   * En liten hack da bruk av border-bottom ikke kan ha radius på 4 kanter
+   */
+  margin-top: 5px;
+  background-color: var(--black);
+  height: 20px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.gallery-image-wrapper {
+  /* 
+   * Wrapper rundt bildene i galleriet som senterer
+   * dem og legger til en svart bakgrunn. Dette gir
+   * en illusjon av at bildene fyller grid cellen mens
+   * man ivaretar aspect ratio på bildet.
+   */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  place-items: center;
+  background-color: black;
+  cursor: pointer;
+}
+
+.gallery-image-wrapper:hover {
+  opacity: 0.8;
+}
+
+.gallery-image {
+  /*
+   * Bilder i galleriet blir skalert etter breddet på 
+   * grid cellene.
+   */
+  width: 100%;
+}
+
+.gallery-image-wrapper,
+.gallery-image {
+  border-radius: 4px;
+}
+
+#gallery-modal {
+  /*
+   * Lager en modal som dekker hele skjermstørrelsen og
+   * ligger over alt annet på siden med en svart transparent
+   * farge. Skjult "by default" og vil vises når brukeren
+   * klikker på et bilde.
+   */
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.gallery-modal-content {
+  /*
+   * Innholdet som skal vises i modalen ligger i denne diven.
+   * Den passer på at innholdet blir sentrert på skjermen
+   * og regulerer størrelsen på innholdet.
+   */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: var(--white);
+  text-align: center;
+  cursor: auto;
+}
+
+#gallery-modal-image {
+  /*
+   * Bildet i modalen skal dekke fylle alt av tilgjengelig plass i horisontal retning.
+   */
+  width: 100%;
+}
+
+#gallery-modal-close {
+  /*
+   * Her plasseres modal lukke-knappen i forhold til innholdet i modalen.
+   * Man kan lett endre posisjonen ved å endre top/right og om ønskelig font
+   * størrelsen. Obs: Disse tre er "litt" avhengig av hverandre da elementet
+   * blir posisjonert absolutt i forhold til senteret på teksten.
+   */
+  position: absolute;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 0%;
+  font-size: 2vw;
+  top: -3%;
+  right: -3%;
+}
+
+@media screen and (max-width: 1200px) {
+  /*
+   * Skjermstørrelse >1200px har content
+   * 80%. Dette gir oss modal størrelse
+   * på 40% av fullskjerm (100%).
+   *
+   * Skjermstørrelse <1200px har content
+   * 100%. Uten mediaquery ville vi fått
+   * modal størrelse på 50% av fullskjerm (100%).
+   *
+   * For å opprettholde ratioen øker vi også
+   * her modal størrelse fra 50% til 60%.
+   */
+  .gallery-modal-content {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /*
+   * Endre til et nx2 rad/kolonner grid på små enheter
+   * for å gjøre bildene mer synlig og lettere å klikke på.
+   */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*
+   * La både .gallery-grid-left og .gallery-grid-right
+   * plassere seg på de 2x2 første radene/kolonner når
+   * vi kun har nx2 rader/kolonner som på små enheter.
+   */
+  .gallery-grid-right {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  /*
+   * Øk størrelsen på modal bildet mer på små (mobile) enheter.
+   */
+  .gallery-modal-content {
+    width: 80%;
+  }
+}
+
+.gallery-image:first-child {
+  scroll-margin-top: 105px;
+}
+
+#gallery-modal-next {
+  position: absolute;
+  z-index: 8;
+  top: calc(50% - 20px);
+  right: -40px;
+}
+
+#gallery-modal-prev {
+  position: absolute;
+  z-index: 8;
+  top: calc(50% - 20px);
+  left: -40px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+button {
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button > svg:hover,
+#gallery-modal-close:hover {
+  color: var(--yellow);
+  stroke: var(--yellow);
+}

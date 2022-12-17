@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+
+<VBox 
+    prefHeight="35.0" 
+    xmlns="http://javafx.com/javafx/8.0.65" 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    alignment="CENTER" 
+    fx:controller="it1901.groups2021.gr2141.ui.controllers.CardAreaController">
+
+    <children>
+      <Region HBox.hgrow="ALWAYS" prefHeight="35.0" prefWidth="35.0" />
+      <Label alignment="CENTER" fx:id="showCard" onMouseClicked="#handleFlipCardMouse" />
+      <!-- Card Navigation -->
+      <fx:include source="CardNavigation.fxml" fx:id="cardNavigation"/>
+    </children>
+  </VBox>

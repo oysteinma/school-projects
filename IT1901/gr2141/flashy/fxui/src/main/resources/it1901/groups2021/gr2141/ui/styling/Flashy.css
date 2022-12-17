@@ -1,0 +1,87 @@
+/* --------------------------------- Colors --------------------------------- */
+/* Some colors added for later iterations */
+* {
+  -main-fg-color:                       #f8f8f2;
+  -main-grey-color:                     #C4C4C4;
+  -main-black-color:                    #000000;
+
+  -main-purple-menu-color:              #894C93;
+  -main-purple-menu-frame-color:        #663B6D;
+  -main-purple-menu-accent-color:       #AC60B9;
+  -main-purple-menu-accent-frame-color: #85488F;
+
+
+}
+
+/* --------------------------------- General --------------------------------- */
+
+.root{
+  -fx-font-size: 10pt;
+  -fx-font-family: "Roboto";
+}
+
+/* --------------------------------- Navbar --------------------------------- */
+
+#navbar {
+  -fx-background-color: -main-purple-menu-color;
+}
+
+#header {
+  -fx-font-size: 15;
+  -fx-text-fill: -main-fg-color;
+}
+
+#navbar .glyph-icon {
+  -fx-fill: -main-fg-color;
+}
+
+#navbar .toggle-button
+{
+  -fx-background-color: -main-purple-menu-color;
+} 
+
+#navbar .toggle-button:hover
+{
+  -fx-background-color: -main-grey-color;
+} 
+
+#navbar .toggle-button:selected {
+  -fx-background-color: -main-black-color;
+}
+
+/* --------------------------------- Menu --------------------------------- */
+
+#menu {
+  -fx-background-color: -main-grey-color;
+}
+
+#menu .button:hover {
+  -fx-background-color: -main-purple-menu-accent-color;
+}
+
+#menu .button {
+  -fx-background-color: transparent;
+}
+
+#menu .button:pressed {
+  -fx-background-color: -main-black-color;
+}
+
+/* --------------------------------- FlashCard --------------------------------- */
+
+#cardArea {
+  -fx-background-color: -main-grey-color;
+}
+
+#showCard {
+  -fx-background-color: -main-purple-menu-accent-frame-color;
+  -fx-text-fill: -main-fg-color;
+  -fx-font-size: 25;
+  -fx-min-height:250;
+  -fx-min-width:400;
+  -fx-padding: 5px;
+  -fx-border-insets: 10px;
+  -fx-background-insets: 10px;
+}
+
+

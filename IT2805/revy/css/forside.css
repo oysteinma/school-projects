@@ -1,0 +1,120 @@
+/* Importer all css fra hovedstylesheet style.css */
+@import url("style.css");
+
+/* Overskriv bagrunn ettersom forsiden ikke skal ha samme farge som alle andre sider */
+html,
+body {
+  background-color: var(--black);
+}
+
+.forside_oversikt {
+  display: flex;
+  height: 400px;
+  flex-direction: row;
+  gap: 15%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.forside_oversikt a {
+  color: var(--white);
+  text-decoration: none;
+  -webkit-text-stroke: 2px black;
+  font-size: 70px;
+  display: block;
+}
+
+.forside_oversikt a:hover {
+  color: var(--yellow);
+}
+
+.forside_oversikt > div {
+  width: 350px;
+}
+
+.forside_oversikt img {
+  width: 100%;
+  border-radius: 2%;
+}
+
+/* Parallax inspirasjon hentet her: https://www.w3schools.com/howto/howto_css_parallax.asp */
+
+.cont {
+  position: relative;
+}
+.centered {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cont2 {
+  position: relative;
+}
+.centered2 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.parallax {
+  margin-top: 0;
+  background-image: url("../img/forsidebilder/forsidebakgrunn.jpg");
+
+  min-height: 400px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax2 {
+  background-image: url("../img/forsidebilder/facebook.jpg");
+
+  min-height: 400px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax3 {
+  background-image: url("../img/forsidebilder/om_revyen.jpg");
+
+  min-height: 400px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Media queries som vil gjøre siden mer responsiv på mindre enheter */
+@media screen and (max-width: 844px) {
+  .forside_oversikt {
+    gap: 10%;
+  }
+}
+@media screen and (max-width: 798px) {
+  .forside_oversikt {
+    height: 600px;
+    gap: 10%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .forside_oversikt {
+    height: 600px;
+    gap: 10%;
+  }
+  .forside_oversikt > div {
+    width: 300px;
+  }
+}

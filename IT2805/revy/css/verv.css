@@ -1,0 +1,96 @@
+/* Importer all css fra hovedstylesheet style.css */
+@import url("style.css");
+
+.image {
+  width: 50%;
+  height: 50%;
+  border-radius: 4px;
+}
+
+/* styles links */
+.verv-nav a {
+  line-height: 1.2;
+  font-size: 18px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.verv-nav a:hover {
+  font-weight: bold;
+}
+
+.verv-gruppe > div > h2,
+.verv-gruppe > div > p {
+  margin-bottom: 1rem;
+}
+
+.verv-gruppe > div {
+  margin-right: 1rem;
+}
+
+.verv-gruppe {
+  margin-bottom: 2rem;
+}
+
+.shake {
+  background-color: var(--black);
+  border-radius: 13px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 0;
+  outline: none;
+}
+
+.shake:hover {
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+#skuespillere,
+#band,
+#mediagruppa,
+#scenegruppa,
+#skribent,
+#kosegruppa,
+#dansere {
+  scroll-margin-top: 125px;
+}
+
+.verv-flex {
+  display: flex;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.verv-nav {
+  min-width: 25%;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 129px;
+}
+
+.verv-gruppe {
+  display: flex;
+}
+
+/* Gjør siden mer responsiv på mindre enheter */
+@media screen and (max-width: 680px) {
+  .image {
+    margin-bottom: 1rem;
+  }
+
+  .verv-gruppe {
+    flex-wrap: wrap-reverse;
+  }
+
+  .verv-nav {
+    display: none;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>Bildegalleri</title>
+    <link rel="icon" type="image/png" href="img/imgheader/emil.png">
+    <link rel="stylesheet" href="css/bildegalleri.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header id="header"></header>
+      <figure id="banner"></figure>
+      <nav id="navbar"></nav>
+      <main class="content fill">
+        <div id="gallery" class="gallery"></div>
+        <div id="gallery-modal">
+          <div class="gallery-modal-content">
+            <div id="gallery-modal-close" onclick="closeModal()">&times;</div>
+            <button id="gallery-modal-prev" onclick="prevImage()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                <polyline points="0,0 24,12 0,24"/>
+              </svg>
+            </button>
+            <img id="gallery-modal-image" src="img/2020/img-0.jpg" alt="uthevet revybilde">
+            <button id="gallery-modal-next" onclick="nextImage()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                <polyline points="0,0 24,12 0,24"/>
+              </svg>
+            </button>
+            <div id="gallery-modal-text"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer id="footer"></footer>
+    <script src="scripts/header.js" async></script>
+    <script src="scripts/navbar.js" async></script>
+    <script src="scripts/footer.js" async></script>
+    <script src="scripts/gallery.js" async></script>
+  </body>
+</html>

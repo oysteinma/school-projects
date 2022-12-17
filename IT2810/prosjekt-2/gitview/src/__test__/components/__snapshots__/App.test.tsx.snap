@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`check if App renders succesfully 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-19sbeka-MuiPaper-root-MuiAppBar-root"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular css-r6ewbb-MuiToolbar-root"
+    >
+      <img
+        alt="logo"
+        class="MuiBox-root css-v9aowo"
+        src="logo.png"
+      />
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-146uix7-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="button"
+      >
+        Gitview
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <div
+        class="links MuiBox-root css-1w4tu4k"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-16jcpsg-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          Users
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1cxzgv7-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          Commits
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1cxzgv7-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          Issues
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </header>
+  <div
+    class="content"
+  >
+    <div
+      id="form"
+    >
+      <div
+        id="introform"
+      >
+        <h1>
+          Welcome To GitView!
+        </h1>
+        <p>
+          This is a simple website which lets you view the users, commits, and issues of your own GitLab repository. The pages lets you interact in different ways with the data, such that you can view more specific details about your own repository!
+        </p>
+        <hr />
+        <p>
+          Please enter your Project ID and Project Access Token down below to use the website.
+        </p>
+      </div>
+      <div
+        id="formdiv"
+      >
+        <div
+          id="iddiv"
+        >
+          <input
+            class="inputs"
+            id="idinput"
+            placeholder="Project ID"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          id="tokendiv"
+        >
+          <input
+            class="inputs"
+            id="tokeninput"
+            placeholder="Project Token"
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          id="buttondiv"
+        >
+          <button
+            id="buttoninput"
+            role="button"
+            type="button"
+          >
+            Connect!
+          </button>
+        </div>
+        <div
+          id="gitdiv"
+        >
+          <img
+            id="gitlogo"
+            src="git-logo.png"
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </div>
+  <div
+    class="footer"
+  >
+    <footer>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+        style="background-color: white;"
+      />
+      <div
+        class="MuiBox-root css-1n3rr7d"
+      >
+        GitView ® 
+        2022
+      </div>
+      <hr
+        class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+        style="background-color: white;"
+      />
+    </footer>
+  </div>
+</div>
+`;

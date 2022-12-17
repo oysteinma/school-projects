@@ -1,0 +1,118 @@
+/* --------------------------------- Colors --------------------------------- */
+
+:root {
+  --background-color: #0b1928;
+  --content-color: #071a2f;
+  --footer-color: #021223;
+  --button-color: #0059b2;
+  --button-hover-color: #004c8c;
+}
+
+/* --------------------------------- General --------------------------------- */
+
+body {
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  color: white;
+}
+
+.content {
+  margin: 20px;
+  background-color: var(--content-color);
+  box-shadow: 1px 5px 5px 5px black;
+  color: white;
+  border-radius: 20px;
+  width: 70vw;
+  margin: auto;
+  margin-bottom: 80px;
+  padding: 2vw;
+}
+
+.footer {
+  background-color: var(--footer-color);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 15px;
+}
+
+/* --------------------------------- Landing Page --------------------------------- */
+
+#formdiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 30px;
+}
+
+#introform {
+  text-align: center;
+  padding: 5vw;
+  padding-top: 2vh;
+}
+
+.inputs {
+  width: 15vw;
+  height: 6vh;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 1vw;
+  text-align: left;
+}
+
+#buttondiv,
+#gitdiv {
+  grid-column: span 2;
+}
+
+#buttoninput {
+  font-family: inherit;
+  font-weight: 550;
+  color: white;
+  background-color: var(--button-color);
+  width: 15vw;
+  height: 6vh;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#buttoninput:hover {
+  background-color: var(--button-hover-color);
+}
+
+#gitlogo {
+  width: 20vw;
+  filter: invert(26%) sepia(48%) saturate(5004%) hue-rotate(239deg)
+    brightness(80%) contrast(102%);
+}
+
+/* --------------------------------- Responsive --------------------------------- */
+
+@media screen and (max-width: 1050px) {
+  .content {
+    width: 93%;
+  }
+
+  #iddiv,
+  #tokendiv {
+    grid-column: span 2;
+  }
+
+  .links {
+    right: 0;
+    position: relative;
+    margin-left: auto;
+    right: 2px;
+  }
+
+  .inputs,
+  #gitlogo {
+    width: 160px;
+  }
+
+  #buttoninput {
+    width: 100px;
+  }
+}
