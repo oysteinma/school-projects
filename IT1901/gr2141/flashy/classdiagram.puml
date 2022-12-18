@@ -1,0 +1,53 @@
+@startuml
+
+CardDeck <|-- Flashcard
+class CardDeck{
+  - Flashcards : List<flashcard>
+  + add(flashcard)
+  + add(index, flashcard)
+  + remove(index)
+  + isEmpty() : boolean
+  + getNumberOfCards() : int 
+}
+
+CardDeck <|-- FlashcardProvider
+Flashcard <|-- FlashcardProvider
+class FlashcardProvider {
+  - deck : cardDeck 
+  - cardIndex : int 
+  - cardShowsFront : boolean 
+  - showOrderIsFlippedMode : boolean 
+  - cardOrderIsRandomMode : boolean 
+  - firstLastWrapAroundMode : boolean
+  + setCardDeckStorage(CardDeckStorage)
+  + initializeCardDeck()
+  + initializeModes()
+}
+
+class Flashcard {
+   - front : CardContent 
+   - back : CardContent 
+   + getFront() : front
+   + getBack() : back
+   + setFront(front)
+   + setBack(back)
+}
+
+
+Flashcard  <|-- CardContent
+
+class CardContent{
+   - lines : List<String> 
+   + getLines() : lines
+}
+
+CardDeckStorage <|-- FlashcardProvider
+Interface CardDeckStorage {
+  + LocalCardDeckStorage
+  + RemoteCardDeckStorage 
+  + writeDeck(id)
+  + readDeck(id) : CardDeck
+  + readAllDecks() : List<CardDeck>
+}
+ 
+@enduml

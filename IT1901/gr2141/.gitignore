@@ -1,0 +1,11 @@
+# Maven related files
+.project
+.classpath
+.settings
+org.eclipse.*.prefs
+target/
+bin/
+dependency-reduced-pom.xml
+
+# Nix related files
+result

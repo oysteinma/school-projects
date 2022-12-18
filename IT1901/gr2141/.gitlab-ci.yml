@@ -1,0 +1,198 @@
+# Old CI/CD
+
+# # Based on
+# # https://gitlab.stud.idi.ntnu.no/oysteikt/h20-tdt4100-project/-/blob/master/pom.xml
+
+# image: maven:3-openjdk-16-slim
+
+# include:
+#   - template: Security/SAST.gitlab-ci.yml
+
+# variables:
+#   SECURE_LOG_LEVEL: "debug"
+#   SAST_JAVA_VERSION: 11
+
+#   # This will suppress any download for dependencies and plugins or upload messages which would clutter the console log.
+#   # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
+#   MAVEN_OPTS: "\
+#     -Dhttps.protocols=TLSv1.2 \
+#     -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository \
+#     -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN \
+#     -Dorg.slf4j.simpleLogger.showDateTime=true \
+#     -Djava.awt.headless=true"
+
+#   # As of Maven 3.3.0 instead of this you may define these options in `.mvn/maven.config` so the same config is used
+#   # when running from the command line.
+#   MAVEN_CLI_OPTS: " \
+#   --batch-mode \
+#   --errors \
+#   --fail-at-end \
+#   --show-version \
+#   -Dprism.verbose=true \
+#   -Dtestfx.robot=glass \
+#   -Dtestfx.headless=true \
+#   -Dglass.platform=Monocle \
+#   -Dprism.order=sw \
+#   -Dprism.text=t2k \
+#   -Dtestfx.setup.timeout=60000"
+
+#   # Paths relative to flashy/
+#   SUREFIRE_REPORTS_PATH: "target/surefire-reports"
+#   WEBSITE_PATH: "target/staging"
+#   COBERTURA_PATH: "$WEBSITE_PATH/cobertura.xml"
+#   RAW_JACOCO_AGGREGATE_PATH: "report/target/site/jacoco-aggregate"
+#   JACOCO_AGGREGATE_PATH: "$WEBSITE_PATH/jacoco-aggregate"
+#   REST_DOCS: $WEBSITE_PATH/restdocs
+
+#   WEBSITE_PATCHES: " \
+#   -e s|\\.\\./\\.\\./report/target/site/jacoco-aggregate/index.html|jacoco-aggregate/index.html| \
+#   -e s|\\.\\./\\.\\./\\.\\./flashy_client/doc|flashy-client|"
+
+# # Cache downloaded dependencies and plugins between builds.
+# # To keep cache across branches add 'key: "$CI_JOB_NAME"'
+# cache:
+#   paths:
+#     - .m2/repository
+
+# stages:
+#   - build
+#   - test
+#   - report
+#   - report-data-extraction
+#   - deploy
+
+# #######################
+# ### FLASHY PIPELINE ###
+# #######################
+
+# build-flashy:
+#   stage: build
+#   script:
+#     - "cd flashy"
+#     - "mvn clean package -Dmaven.test.skip=true $MAVEN_CLI_OPTS"
+#   artifacts:
+#     paths:
+#       - flashy/target/
+
+# unittest-flashy:
+#   stage: test
+#   needs: [build-flashy]
+#   script:
+#     - "apt update"
+#     - "apt install -y openjfx xmlstarlet"
+#     - "cd flashy"
+#     - "mvn test $MAVEN_CLI_OPTS"
+#     - "modules=($(xmlstarlet sel -N my=http://maven.apache.org/POM/4.0.0 -t -m '//my:module' -v . -o ' ' pom.xml))"
+#     - "mkdir -p $SUREFIRE_REPORTS_PATH"
+#     - "for module in $modules; do"
+#     - "  cp $module/target/surefire-reports/TEST-*.xml $SUREFIRE_REPORTS_PATH || :"
+#     - "done"
+#   artifacts:
+#     paths:
+#       - flashy/$SUREFIRE_REPORTS_PATH
+#     when: always
+#     reports:
+#       junit:
+#         - flashy/$SUREFIRE_REPORTS_PATH/TEST-*.xml
+
+# report-flashy:
+#   stage: report
+#   script:
+#     - "apt update"
+#     - "apt install -y openjfx wget"
+#     - "cd flashy"
+#     - "sed -i $WEBSITE_PATCHES src/site/site.xml"
+#     - 'mvn clean test $MAVEN_CLI_OPTS site site:stage'
+#     # Move real jacoco-aggregate to site
+#     - 'rm -r $JACOCO_AGGREGATE_PATH'
+#     - 'mv $RAW_JACOCO_AGGREGATE_PATH $WEBSITE_PATH'
+#     # Generate APIdocs
+#     - "wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.30/swagger-codegen-cli-3.0.30.jar -O swagger-codegen-cli.jar"
+#     - "mkdir -p $REST_DOCS"
+#     # `--add-opens java.base/java.util=ALL-UNNAMED` is mega cursed
+#     - "java -jar --add-opens java.base/java.util=ALL-UNNAMED swagger-codegen-cli.jar generate -i restdocs.yml -l html -o $REST_DOCS"
+#   artifacts:
+#     paths:
+#       - "flashy/$WEBSITE_PATH"
+
+# process-coverage-flashy:
+#   stage: report-data-extraction
+#   image: haynes/jacoco2cobertura:1.0.7
+#   needs: [report-flashy]
+#   script:
+#     - 'cd flashy'
+#     # convert report from jacoco to cobertura
+#     - 'python /opt/cover2cover.py $JACOCO_AGGREGATE_PATH/jacoco.xml src/main/java > $COBERTURA_PATH'
+#     # read the <source></source> tag and prepend the path to every filename attribute
+#     - 'python /opt/source2filename.py $COBERTURA_PATH'
+#     - 'cat $JACOCO_AGGREGATE_PATH/index.html'
+#   coverage: '/Total.*?([0-9]{1,3})%/'
+#   artifacts:
+#     reports:
+#       cobertura: flashy/$COBERTURA_PATH
+
+# ##############################
+# ### FLASHY-CLIENT PIPELINE ###
+# ##############################
+
+# build-flashy-client:
+#   image: cirrusci/flutter:latest
+#   stage: build
+#   script:
+#     - "cd flashy_client"
+#     - "flutter build apk --release"
+#   artifacts:
+#     paths:
+#       - flashy_client/build/app/outputs/flutter-apk/app-release.apk
+
+# test-flashy-client:
+#   image: cirrusci/flutter:latest
+#   stage: test
+#   script:
+#     - "cd flashy_client"
+#     - "flutter pub global activate junitreport"
+#     - "flutter test --reporter json | ~/.pub-cache/bin/tojunit --output testreports.xml"
+#   artifacts:
+#     reports:
+#       junit:
+#         - "flashy_client/testreports.xml"
+
+# report-flashy-client:
+#   image: cirrusci/flutter:latest
+#   stage: report
+#   script:
+#     - "cd flashy_client"
+#     - "apt update"
+#     - "apt install -y lcov"
+#     - "flutter pub get"
+#     - "dart pub global activate dartdoc"
+#     - "dartdoc"
+#     - "flutter test --coverage"
+#     - "mv coverage doc"
+#     - "genhtml doc/coverage/lcov.info --output-directory=doc/coverage"
+#     - "lcov --list doc/coverage/lcov.info"
+#   coverage: '/Total:\|(\d+\.?\d+\%)/'
+#   artifacts:
+#     paths:
+#       - "flashy_client/doc"
+
+# ########################
+# ### GENERAL PIPELINE ###
+# ########################
+
+# pages:
+#   stage: deploy
+#   needs: [build-flashy, report-flashy, build-flashy-client, report-flashy-client]
+#   script:
+#     - 'mkdir public'
+#     - 'mv flashy/target/flashy.jar public/'
+#     - 'mv flashy/$WEBSITE_PATH/* public/'
+#     - 'mkdir public/flashy-client'
+#     - 'mv flashy_client/doc/* public/flashy-client'
+#     - 'mv flashy_client/build/app/outputs/flutter-apk/app-release.apk public/flashy-client/flashy-client.apk'
+#   artifacts:
+#     paths:
+#       - public
+#     expire_in: 6 mos
+#   only:
+#     - master

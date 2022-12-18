@@ -1,0 +1,13 @@
+open module it1901.groups2021.gr2141.fxui {
+  requires it1901.groups2021.gr2141.core;
+
+  requires transitive javafx.graphics;
+  requires javafx.fxml;
+  requires javafx.controls;
+
+  requires org.junit.jupiter;
+  requires org.junit.jupiter.api;
+  requires org.testfx;
+
+  exports it1901.groups2021.gr2141;
+}

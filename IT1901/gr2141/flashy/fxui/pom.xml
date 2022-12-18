@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>it1901.groups2021.gr2141</groupId>
+    <artifactId>flashy</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>fxui</artifactId>
+  <name>FXML User Interface</name>
+  <version>${project.parent.version}</version>
+  <description>
+    Module including everything relevant to the UI
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>core</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+
+    <!-- JavaFX -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+    </dependency>
+
+    <!-- Material Icons -->
+    <dependency>
+      <groupId>de.jensd</groupId>
+      <artifactId>fontawesomefx-materialicons</artifactId>
+      <version>2.2.0-9.1.2</version>
+    </dependency>
+
+    <!-- Monocle - Headless UI testing in CI -->
+    <dependency>
+      <groupId>org.testfx</groupId>
+      <artifactId>openjfx-monocle</artifactId>
+      <version>jdk-12.0.1+2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+    	<groupId>org.testfx</groupId>
+    	<artifactId>testfx-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.testfx</groupId>
+    	<artifactId>testfx-junit5</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Plugin for maven to make it easier to run JavaFX from the command line -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.6</version>
+        <configuration>
+          <mainClass>it1901.groups2021.gr2141.ui.Flashy</mainClass>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

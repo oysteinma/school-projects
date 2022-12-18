@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+  <!-- Based on: https://github.com/apache/maven/blob/master/src/site/site.xml -->
+
+  <bannerLeft>
+    <name>${project.name}</name>
+    <src>https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2141/gr2141/-/raw/master/graphics/logo_with_word_96.png</src>
+    <href>https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2141/gr2141</href>
+  </bannerLeft>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.9</version>
+  </skin>
+
+  <body>
+    <breadcrumbs>
+      <item name="Ref" href="../" />
+      <item name="${project.name} ${project.version}" href="./" />
+    </breadcrumbs>
+
+    <menu name="Overview">
+      <item name="Introduction" href="index.html"/>
+      <item name="Download" href="flashy.jar"/>
+    </menu>
+
+    <menu name="Gitlab">
+      <item name="Project Overview" href="${gitlab.url}"/>
+      <item name="Issues"           href="${gitlab.url}/-/issues"/>
+      <item name="Pipeline"         href="${gitlab.url}/-/pipelines"/>
+    </menu>
+
+    <menu name="Project Reports">
+      <item name="Report 1 - 24.09.21" href="${gitlab.url}/blob/master/gr2141/docs/Report1.md"/>
+      <item name="Report 2 - 22.10.21" href="${gitlab.url}/blob/master/gr2141/docs/Report2.md"/>
+      <item name="Report 3 - 28.11.21" href="${gitlab.url}/blob/master/gr2141/docs/Report3.md"/>
+    </menu>
+
+    <menu name="Details">
+      <item name="Dependencies" href="dependencies.html"/>
+      <item name="Plugins"      href="plugins.html"/>
+      <item name="License"      href="licenses.html"/>
+      <item name="REST API documentation"      href="restdocs/index.html"/> 
+    </menu>
+
+    <menu ref="modules"/>
+    <!-- <menu name="Miscellaneous" ref="reports"/> -->
+    <menu name="Build Reports">
+      <item name="Jacoco"        href="../../report/target/site/jacoco-aggregate/index.html"/>
+      <item name="JavaDocs"      href="apidocs/index.html"/>
+      <item name="Surefire"      href="surefire-report.html"/>
+      <item name="PMD"           href="pmd.html"/>
+      <item name="Checkstyle"    href="checkstyle-aggregate.html"/>
+    </menu>
+
+    <menu name="Flashy-client">
+      <item name="API Docs"      href="../../../flashy_client/doc/api/index.html"/>
+      <item name="Coverage"      href="../../../flashy_client/doc/coverage/index.html"/>
+    </menu>
+
+  </body>
+</project>

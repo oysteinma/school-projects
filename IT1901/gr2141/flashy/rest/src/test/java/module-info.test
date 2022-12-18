@@ -1,0 +1,16 @@
+open module it1901.groups2021.gr2141.rest {
+  requires it1901.groups2021.gr2141.core;
+  requires jakarta.ws.rs;
+
+  requires jersey.common;
+  requires jersey.server;
+  requires jersey.media.json.jackson;
+
+  requires org.glassfish.hk2.api;
+
+  requires org.junit.jupiter;
+  requires org.junit.jupiter.api;
+  requires org.glassfish.jersey.test;
+
+  opens it1901.groups2021.gr2141.restapi to jersey.server;
+}

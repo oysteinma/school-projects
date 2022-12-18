@@ -1,0 +1,58 @@
+@startuml
+component core{
+    package it1901.groups2021.gr2141.core.models as models
+    
+    package it1901.groups2021.gr2141.core.storage as storage
+
+    package it1901.groups2021.gr2141.core.domainlogic as domain
+
+    package it1901.groups2021.gr2141.core.state as state
+}
+
+component rest{
+    package it1901.groups2021.gr2141.rest.restapi as restapi
+
+    package it1901.groups2021.gr2141.rest.restserver as restserver
+}
+
+component fxui{
+    package it1901.groups2021.gr2141.ui as ui
+
+    package it1901.groups2021.gr2141.ui.controllers as controllers
+}
+
+component packaging{
+    package it1901.groups2021.gr2141
+}
+
+fxui -[hidden]d--> core
+
+fxui --> javafx
+fxui --> core
+packaging --> javafx
+packaging --> fxui
+fxui --> material_icons
+core --> jackson
+ui --> state
+ui --> domain
+ui <--> controllers
+controllers --> models
+domain --> models
+domain --> state
+
+
+component javafx {
+}
+component jackson{
+}
+component material_icons {
+}
+
+
+controllers --> domain
+storage --> models
+ui --> models
+ui --> storage
+storage --> restserver
+storage --> restapi
+@enduml

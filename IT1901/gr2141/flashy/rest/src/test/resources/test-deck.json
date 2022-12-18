@@ -1,0 +1,28 @@
+{
+  "flashcards": [
+    {
+      "front": {
+        "lines": [
+          "front1"
+        ]
+      },
+      "back": {
+        "lines": [
+          "back1"
+        ]
+      }
+    },
+    {
+      "front": {
+        "lines": [
+          "front2"
+        ]
+      },
+      "back": {
+        "lines": [
+          "back2"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "Serializer": {
+    "prefix": ["srz", "sz"],
+    "description": "Boilerplate for a jackson serializer",
+    "body": [
+      "import java.io.IOException;",
+      "",
+      "import com.fasterxml.jackson.core.JsonGenerator;",
+      "import com.fasterxml.jackson.databind.SerializerProvider;",
+      "import com.fasterxml.jackson.databind.ser.std.StdSerializer;",
+      "",
+      "public class ${1:Item}Serializer extends StdSerializer<${1:Item}> {",
+      "  public ${1:Item}Serializer() {",
+      "    this(null);",
+      "  }",
+      "",
+      "  public ${1:Item}Serializer(Class<${1:Item}> t) {",
+      "    super(t);",
+      "  }",
+      "",
+      "  @Override",
+      "  public void serialize(${1:Item} ${2:item}, JsonGenerator jgenerator, SerializerProvider provider) throws IOException {",
+      "    $0",
+      "  }",
+      "}"
+    ]
+  },
+  "Deserializer": {
+    "prefix": ["dsz"],
+    "description": "Boilerplate for a jackson deserializer",
+    "body": [
+      "import java.io.IOException;",
+      "",
+      "import com.fasterxml.jackson.core.JacksonException;",
+      "import com.fasterxml.jackson.core.JsonParser;",
+      "import com.fasterxml.jackson.databind.DeserializationContext;",
+      "import com.fasterxml.jackson.databind.deser.std.StdDeserializer;",
+      "",
+      "public class ${1:Item}Deserializer extends StdDeserializer<${1:Item}> {",
+      "  public ${1:Item}Deserializer() {",
+      "    this(null);",
+      "  }",
+      "",
+      "  public ${1:Item}Deserializer(Class<${1:Item}> t) {",
+      "    super(t);",
+      "  }",
+      "",
+      "  @Override",
+      "  public ${1:Item} deserialize(JsonParser jparser, DeserializationContext context) throws IOException, JacksonException {",
+      "    $0",
+      "  }",
+      "}"
+    ]
+  },
+  "Test": {
+    "prefix": ["tst"],
+    "description": "Boilerplate for a standard test",
+    "body": [
+      "@Test",
+      "public void test$1() {",
+      "  $0",
+      "}"
+    ]
+  },
+  "Constructor 1": {
+    "prefix": ["st"],
+    "description": "Boilerplate for a standard setter with 1 argument",
+    "body": [
+      "public void set$2($2 $3) {",
+      "  if ($3 == null) {",
+      "    throw new IllegalArgumentException(\"$3 can not be null.\");",
+      "  }",
+      "  this.$3 = $3;",
+      "}"
+    ]
+  }
+}

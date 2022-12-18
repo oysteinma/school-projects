@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>it1901.groups2021.gr2141</groupId>
+    <artifactId>flashy</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <packaging>pom</packaging>
+
+  <artifactId>report</artifactId>
+  <name>Report Aggregate</name>
+  <version>${project.parent.version}</version>
+  <description>
+    Special module for aggregating the test reports into a jacoco code coverage report.
+  </description>
+
+  <!--
+    Because of how jacoco operates on multimodule projects, it's necessary
+    to have a separate module that depends on the other modules and generates
+    the aggregated report. That is the purpose of this module
+
+    For more information, see:
+    https://github.com/jacoco/jacoco/wiki/MavenMultiModule
+  -->
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.parent.groupId}</groupId>
+      <artifactId>core</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.parent.groupId}</groupId>
+      <artifactId>fxui</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.parent.groupId}</groupId>
+      <artifactId>rest</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins> 
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.7</version>
+        <executions>
+          <execution>
+            <id>report</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>report-aggregate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
