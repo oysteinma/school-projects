@@ -1,9 +1,8 @@
-
-[![Pipeline status][badge-pipeline]][pipeline]
+<!-- [![Pipeline status][badge-pipeline]][pipeline]
 [![Code coverage][badge-coverage]][code-coverage]
 [![Project page][badge-projectpage]][project-page]
 [![Download][badge-download]][download]
-[![Gitpod][badge-gitpod]][gitpod]
+[![Gitpod][badge-gitpod]][gitpod] -->
 
 # Flashy
 
@@ -15,7 +14,7 @@
 
 Flashy is an application which can help you make and memorize flashcards. It's meant to be used as a study tool, that keeps track of all your sets of flashcards.
 
-A more in depth description of flashy's features can be found in the **[user story](../gr2141/docs/userstory/userstory.md)**
+A more in depth description of flashy's features can be found in the **old-link**
 
 ## Preview:
 
@@ -42,6 +41,7 @@ Link to Architecture.wsd is found here: [architecture](architecture.puml)
 Link to sequencediagram.wsd is found here: [sequencediagram](sequencediagram.puml)
 
 #### Class diagram
+
 <div align="center">
   <img src="../graphics/classdiagram.png" alt="Classdiagram diagram" />
 </div>
@@ -50,9 +50,9 @@ Link to classdiagram.wsd is found here: [classdiagram](classdiagram.puml)
 
 ## Usage
 
-To use the application, you can download and run the jar file found in the **[latest release][latest-release]**.
+To use the application, you can download and run the jar file found in the **old-link**.
 
-You can also use the [![Download][badge-download]][download] badge to download the latest version. Note that this might be unstable.
+You can also use the **old-link** badge to download the latest version. Note that this might be unstable.
 
 To run it, you're going to need do download **[Java][java-download]**.
 
@@ -66,7 +66,7 @@ If you would rather want to open the application in remote mode, see [API](#rest
 
 ### **Development requirements**
 
-The easiest solution to get the development environment up and running, is to open the project in [Gitpod][gitpod]
+The easiest solution to get the development environment up and running, is to open the project in Gitpod.
 
 If you want to work on it locally, you're going to need the following things:
 
@@ -100,7 +100,7 @@ $ mvn javafx:run
 This project is split into modules. Each module is responsible for separate parts of the application.
 
 | Module Name                   | Description                                                   |
-|-------------------------------|---------------------------------------------------------------|
+| ----------------------------- | ------------------------------------------------------------- |
 | [Core][module-core]           | The base classes and logic used everywhere in the application |
 | [FXUI][module-fxui]           | The desktop application                                       |
 | [REST][module-rest]           | The REST API server                                           |
@@ -144,19 +144,16 @@ $ java -jar flashy/target/flashy.jar --help
 [badge-projectpage]: https://img.shields.io/badge/Docs-Project%20Page-blue
 [badge-download]: https://img.shields.io/badge/Download-JAR-purple
 [badge-gitpod]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
-
 [pipeline]: https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2141/gr2141/-/pipelines
 [code-coverage]: https://it1901.pages.stud.idi.ntnu.no/groups-2021/gr2141/gr2141/jacoco-aggregate/index.html
 [project-page]: https://it1901.pages.stud.idi.ntnu.no/groups-2021/gr2141/gr2141/index.html
 [download]: https://it1901.pages.stud.idi.ntnu.no/groups-2021/gr2141/gr2141/flashy.jar
 [gitpod]: https://gitpod.stud.ntnu.no/#https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2141/gr2141
 [arc]: /flashy/architecture.wsd
-
 [java-download]: https://www.java.com/en/download/
 [latest-release]: https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2141/gr2141/-/releases
 [install-maven]: https://maven.apache.org/download.cgi
 [install-openjdk]: https://jdk.java.net/16/
-
 [module-core]: ./core
 [module-fxui]: ./fxui
 [module-rest]: ./rest

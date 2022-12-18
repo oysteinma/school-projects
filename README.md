@@ -1,6 +1,6 @@
 # School Projects
 
-Some indivdual and group projects I have worked on during my time at NTNU.
+Some indivdual and group projects I have worked on during my time at NTNU Trondheim.
 
 **_NOTE:_** All projects are moved from GitLab to GitHub.
 
