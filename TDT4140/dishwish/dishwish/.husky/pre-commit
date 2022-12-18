@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Husky is run from root, as such we first need to cd to current directory 
+cd "$(dirname "$0")"
+echo Running pre-commit hooks...
+npm run pretty-quick:staged
+npm run lint-staged
+
