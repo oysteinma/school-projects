@@ -45,4 +45,4 @@ Some indivdual and group projects I have worked on during my time at NTNU Trondh
 
   - [IT2805](IT2805): Web Technologies
 
-    - [Project](IT2805/it2805-project) (Group)
+    - [Project](IT2805/revy) (Group)
