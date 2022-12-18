@@ -1,0 +1,15 @@
+# Java
+target/
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# IntelliJ
+.idea/
+
+#VSCode
+.vscode/
+
+dependency-reduced-pom.xml

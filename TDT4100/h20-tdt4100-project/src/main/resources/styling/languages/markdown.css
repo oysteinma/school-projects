@@ -1,0 +1,75 @@
+.code-area {
+  -test-color: #193814
+}
+
+.code-area .comment {
+  -fx-fill: -main-comment-color;
+}
+
+.code-area .header {
+  -fx-fill: -main-green-color;
+  -fx-font-size: 200%;
+  -fx-font-weight: bold;
+}
+
+.code-area .sheader {
+  -fx-fill: -main-blue-color;
+  -fx-font-size: 150%;
+  -fx-font-weight: bold;
+}
+
+.code-area .ssheader {
+  -fx-fill: -main-red-color;
+  -fx-font-size: 130%;
+}
+
+.code-area .sssheader {
+  -fx-fill: -main-magenta-color;
+  -fx-font-size: 120%;
+}
+
+.code-area .ssssheader {
+  -fx-fill: -main-cyan-color;
+  -fx-font-size: 110%;
+}
+
+.code-area .emphasized {
+  -fx-fill: -main-blue-color;
+  -fx-font-weight: bold;
+}
+
+.code-area .italic {
+  -fx-fill: -main-cyan-color;
+  -fx-font-style: italic;
+}
+
+.code-area .emphasizedItalic {
+  -fx-fill: -main-magenta-color;
+  -fx-font-weight: bold;
+  -fx-font-style: italic;
+}
+
+.code-area .strikethrough {
+  -fx-fill: -main-red-color;
+  -fx-strikethrough: true;
+}
+
+.code-area .listItem {
+  -fx-fill: -main-yellow-color;
+}
+
+.code-area .numberedItem {
+  -fx-fill: -main-yellow-color;
+}
+
+.code-area .link {
+  -fx-fill: -main-red-color;
+}
+
+.code-area .image {
+  -fx-fill: -main-magenta-color;
+}
+
+.code-area .source {
+  -fx-fill: -main-magenta-color;
+}

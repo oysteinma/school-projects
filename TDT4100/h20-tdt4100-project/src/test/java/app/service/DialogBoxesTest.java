@@ -1,0 +1,8 @@
+package app.service;
+
+public class DialogBoxesTest {
+
+  // THIS CLASS COULD NOT BE UNITTESTED BECAUSE OF LACKING SUPPORT FOR MOCKING
+  // STATIC OBJECTS WITH MOCKITO AND JUNI5
+
+}

@@ -1,0 +1,61 @@
+
+.code-area .this {
+  -fx-fill: #FFFF00;
+  -fx-font-weight: bold;
+}
+
+.code-area .true {
+  -fx-fill: #00FF00;
+  -fx-font-weight: bold;
+}
+
+.code-area .false {
+  -fx-fill: #FF0000;
+  -fx-font-weight: bold;
+}
+
+.code-area .paranthesis {
+  -fx-fill: -main-fg-color;
+}
+
+.code-area .curlyBrackets {
+  -fx-fill: -main-fg-color;
+}
+
+.code-area .squareBrackets {
+  -fx-fill: -main-fg-color;
+}
+
+.code-area .semicolon {
+  -fx-fill: -main-fg-color;
+}
+
+.code-area .identifier {
+  -fx-fill: -main-blue-color;
+  -fx-font-weight: bold;
+}
+
+.code-area .property {
+  -fx-fill: -main-fg-color;
+}
+
+.code-area .method {
+  -fx-fill: -main-green-color;
+}
+
+.code-area .keyword {
+  -fx-fill: -main-red-color;
+  -fx-font-weight: bold;
+}
+
+.code-area .comment {
+  -fx-fill: -main-comment-color;
+}
+
+.code-area .string {
+  -fx-fill: -main-yellow-color;
+}
+
+.code-area .escapeChar {
+  -fx-fill: -main-magenta-color;
+}

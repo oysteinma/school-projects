@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TreeView?>
+
+<ScrollPane
+  xmlns="http://javafx.com/javafx/8.0.65"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="app.controllers.FiletreeController"
+  fitToWidth="true"
+  fitToHeight="true">
+  <content>
+    <TreeView
+      fx:id="filetree" onMouseClicked="#handleMouseClick"/>
+  </content>
+</ScrollPane>

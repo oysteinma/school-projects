@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane 
+  prefWidth="600"
+  prefHeight="400"
+  xmlns="http://javafx.com/javafx/8.0.65"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="app.MainController"
+  fx:id="root">
+
+  <top>
+    <!-- Menubar -->
+    <fx:include source="components/Menubar.fxml" fx:id="menubar"/>
+  </top>
+
+  <center>
+    <SplitPane
+      dividerPositions="0.25"
+      orientation="HORIZONTAL">
+    <items>
+  
+      <!-- File tree -->
+      <fx:include source="components/Filetree.fxml" fx:id="filetree"/>
+
+      <!-- Editor -->
+      <fx:include source="components/Editor.fxml" fx:id="editor"/>
+  
+    </items>
+    </SplitPane>
+  </center>
+  
+  <bottom>
+    <!-- Modeline -->
+    <fx:include source="components/Modeline.fxml" fx:id="modeline"/>
+  </bottom>
+
+</BorderPane>

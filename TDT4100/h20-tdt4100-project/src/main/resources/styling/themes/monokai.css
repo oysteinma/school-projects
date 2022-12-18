@@ -1,0 +1,237 @@
+
+* {
+  -main-fg-color:      #f8f8f2;
+
+  -light-bg-color:     #75715e;
+  -main-bg-color:      #272822;
+  -dark-bg-color:      #1a1b17;
+  -shadow-bg-color:    #0d0e0b;
+
+  -main-red-color:     #f92672;
+  -main-green-color:   #a6e22e;
+  -main-yellow-color:  #f4bf75;
+  -main-blue-color:    #66d9ef;
+  -main-magenta-color: #ae81ff;
+  -main-cyan-color:    #a1efe4;
+  -main-comment-color: -light-bg-color;
+
+  -banana-focus-color: #fffb00;
+}
+
+.root {
+  /* -fx-font-family: "Roboto"; */
+  -fx-background-color: -dark-bg-color;
+}
+
+/* --------------------------------- Colors --------------------------------- */
+
+.red-text {
+  -fx-text-fill: -main-red-color
+}
+
+.green-text {
+  -fx-text-fill: -main-red-color
+}
+
+.yellow-text {
+  -fx-text-fill: -main-red-color
+}
+
+.blue-text {
+  -fx-text-fill: -main-red-color
+}
+
+.magenta-text {
+  -fx-text-fill: -main-red-color
+}
+
+.cyan-text {
+  -fx-text-fill: -main-red-color
+}
+
+.gray-text {
+  -fx-text-fill: -light-bg-color
+}
+
+/* --------------------------------- Menubar -------------------------------- */
+
+.menu-bar {
+  -fx-padding: 0 20;
+}
+
+.context-menu {
+  /* -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin"; */
+  -fx-background-color: -dark-bg-color;
+  -fx-padding: 2 2;
+
+}
+
+.menu-bar, .menu-item-separator {
+  -fx-background-color: -dark-bg-color;
+  -fx-text-fill: -main-fg-color;
+}
+
+.menu, .menu-item {
+  -fx-background-color: -main-bg-color;
+  -fx-text-fill: -main-fg-color;
+}
+
+.menu > * > .arrow {
+  -fx-background-color: -main-fg-color;
+}
+
+.menu-item:focused {
+  -fx-background-color: -banana-focus-color;
+  -fx-text-fill: -dark-bg-color;
+}
+
+.menu-item:focused .label {
+  -fx-text-fill: -dark-bg-color;
+}
+
+/* Menuitems visible in top of window */
+
+.menu-bar > * > .menu {
+  -fx-background-color: -dark-bg-color;
+}
+
+.menu-bar > * > .menu:hover {
+  -fx-background-color: -main-bg-color;
+}
+
+/* -------------------------------- SplitPane ------------------------------- */
+
+.split-pane:horizontal {
+  -fx-padding: 10 20 0 20;
+  -fx-background-insets: 10 0 0 0;
+  -fx-background-color: -dark-bg-color;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+  -fx-background-color: -dark-bg-color;
+  -fx-padding: 0 5;
+}
+
+/* ------------------------------- ScrollPane ------------------------------- */
+
+/* https://stackoverflow.com/questions/41804373/javafx-scrollpane-styling */
+
+.scroll-pane {
+  -fx-background-color: -dark-bg-color;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+  -fx-background-color: -dark-bg-color;
+}
+
+.increment-button, .decrement-button {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+  -fx-background-color: white;
+  -fx-background-radius: 5em;
+}
+
+* > .corner {
+  -fx-background-color: -dark-bg-color;
+}
+
+.scroll-pane > .viewport {
+  -fx-background-color: transparent;
+  -fx-effect: innershadow(gaussian, -shadow-bg-color, 10, 0.2, -2, 0);
+}
+
+.scroll-pane {
+  -fx-background-color: transparent;
+}
+
+/* -------------------------------- Filetree -------------------------------- */
+
+.tree-view {
+  -fx-background-color: -main-bg-color;
+  -fx-border-style: none;
+  -fx-background-radius: 20px;
+}
+
+.tree-view .tree-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: -main-fg-color;
+}
+
+.tree-view:focused .tree-cell:focused {
+  -fx-background-color: -banana-focus-color;
+  -fx-text-fill: -dark-bg-color;
+}
+
+.tree-cell > .tree-disclosure-node > .arrow  {
+  -fx-background-color: -main-fg-color;
+}
+
+.tree-view:focused .tree-cell:focused > .tree-disclosure-node > .arrow  {
+  -fx-background-color: -dark-bg-color;
+}
+
+.tree-cell:filled:selected{
+  -fx-background-color: transparent;
+  -fx-border-color: -banana-focus-color;
+  -fx-border-width: 3;
+}
+
+/* --------------------------------- Editor --------------------------------- */
+
+.code-area .text {
+  -fx-fill: -main-fg-color;
+}
+
+.code-area {
+  -fx-font-family: "Fira Code";
+  -fx-font-size: 16;
+  -fx-color: -main-fg-color;
+  -fx-text-fill: -main-fg-color;
+  -fx-background-color: -main-bg-color;
+  -fx-background-radius: 20px;
+  -fx-effect: innershadow(gaussian, -shadow-bg-color, 10, 0.2, -2, 0);
+}
+
+.caret {
+  -fx-stroke: -main-fg-color;
+}
+
+.lineno {
+  -fx-background-color: -light-bg-color;
+  -fx-text-fill: -main-fg-color;
+  -fx-font-size: 16;
+  -fx-padding: 0 15 0 5;
+  -fx-background-insets: 0 10 0 0;
+}
+
+/* -------------------------------- Modeline -------------------------------- */
+
+#modeline {
+  -fx-padding: 0 20;
+}
+
+#modeline .label {
+  -fx-font-size:15;
+  -fx-border-insets: 0 10;
+  -fx-background-insets: 0 10;
+  -fx-padding: 2 20;
+  -fx-background-radius: 10px;
+  -fx-background-color: -light-bg-color;
+}
+
+/* ---------------------------------- Misc ---------------------------------- */
+
+.label {
+  -fx-text-fill: -main-fg-color;
+}

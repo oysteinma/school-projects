@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+
+<HBox 
+  prefHeight="35.0"
+  xmlns="http://javafx.com/javafx/8.0.65"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="app.controllers.ModelineController"
+  alignment="CENTER_LEFT">
+  <Label text="Modeline :)"/>
+  <Label fx:id="filename" text="New file"/>
+  <Region HBox.hgrow="ALWAYS"/>
+  <Label fx:id="saveState" text="Saved!"/>
+  <Label fx:id="columnrow" text="[y:x]"/>
+  <Label fx:id="language" text="Java"/>
+
+</HBox>

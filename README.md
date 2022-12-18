@@ -25,5 +25,9 @@ Some indivdual and group projects I have worked on during my time at NTNU Trondh
   - [Project](TDT4140/dishwish) (Group)
 
 - [IT1901](IT1901): Informatics, Project I
+
   - [Mini Project](IT1901/oystmar) (Individual)
   - [Main Project](IT1901/gr2141) (Group)
+
+- [TDT4100](TDT4100): Object-Oriented Programming
+  - [Project](TDT4100/h20-tdt4100-project) (Group)
