@@ -21,6 +21,6 @@ Some indivdual and group projects I have worked on during my time at NTNU.
   - [Project 4](IT2810/prosjekt-4) (Individual)
 
 - [TDT4140](TDT4140): Software Engineering
-  - [Project](TDT4140/Dishwish) (Group)
+  - [Project](TDT4140/dishwish) (Group)
 
 <!-- - [TDT4140](TDT4140): Software Engineering -->

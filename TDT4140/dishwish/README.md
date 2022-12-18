@@ -14,7 +14,9 @@ Location of the project can be found in the [dishwish](dishwish) directory.
 
 ### Build
 
-The latest build of the project can be viewed [here][react-build].
+The latest build of the project can be viewed **old-link** (out of date; https://dishwish.herokuapp.com/).
+
+<!-- The latest build of the project can be viewed [here][react-build]. -->
 
 ### Code Coverage
 
