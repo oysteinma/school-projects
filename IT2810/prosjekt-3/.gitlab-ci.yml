@@ -1,0 +1,15 @@
+# Old CI/CD
+
+# image: node:16.17.0
+
+# stages:
+#   - format
+
+# prettier:
+#   stage: format
+#   script:
+#     - echo "Checking formatting..."
+#     - cd moviemix
+#     - npm install prettier pretty-quick
+#     - npm run pretty-quick
+#     - echo "Formatting is good!"

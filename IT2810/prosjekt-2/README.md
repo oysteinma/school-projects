@@ -21,7 +21,9 @@ To view the finished project click **old-link**.
 
 ### Documentation
 
-To view the documentation click [here][documentation].
+<!-- To view the documentation click [here][documentation]. -->
+
+To view the documentation click **old-link**.
 
 <!-- Badges -->
 
