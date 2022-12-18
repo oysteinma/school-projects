@@ -239,7 +239,7 @@ public class MenubarController implements Initializable, Controller {
    */
   @FXML
   private void handleAbout(ActionEvent event) {
-    String aboutLink = "https://gitlab.stud.idi.ntnu.no/oysteikt/tdt4100-project-2021v/-/blob/master/README.md";
+    String aboutLink = "https://github.com/oystein-m/school-projects/blob/main/TDT4100/h20-tdt4100-project/README.md";
     this.eventBus.post(new OpenLinkInBrowserEvent(aboutLink));
   }
 

@@ -6,8 +6,6 @@
 
 Probably tastes better than any Apple editor and NetBeans combined.
 
---> [See project requirement details here][requirements.md] <--
-
 In order to run the program, use run.bat if using Windows or run.sh if using UNIX based OS
 
 <img src=".gitlab/graphics/main-screenshot.png">
@@ -15,11 +13,6 @@ In order to run the program, use run.bat if using Windows or run.sh if using UNI
 </div>
 
 ---
-
-[![Pipeline Status](https://gitlab.stud.idi.ntnu.no/oysteikt/h20-tdt4100-project/badges/master/pipeline.svg)](https://gitlab.stud.idi.ntnu.no/oysteikt/h20-tdt4100-project/commits/master/)
-[![Coverage](https://gitlab.stud.idi.ntnu.no/oysteikt/h20-tdt4100-project/badges/master/coverage.svg?)](http://oysteikt.pages.stud.idi.ntnu.no/h20-tdt4100-project/)
-[![Documentation](https://img.shields.io/badge/Documentation-pages-blue)](http://oysteikt.pages.stud.idi.ntnu.no/h20-tdt4100-project/apidocs)
-[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Credits/Sources
 
@@ -45,5 +38,3 @@ In order to run the program, use run.bat if using Windows or run.sh if using UNI
 - [Youtube/Cool IT Help](https://www.youtube.com/watch?v=gnXRI3pHxrU&t=727s) -> Showing how to cast (Stage). Example of how FXML, listener/event and DirectyChooser nicely can cooperate.
 - [Code Makery](https://code.makery.ch/blog/javafx-dialogs-official/) -> Examples of many different javafx dialogs.
 - [Oracle](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html#button) -> How to use JOption.
-
-[requirements.md]: https://gitlab.stud.idi.ntnu.no/oysteikt/h20-tdt4100-project/-/blob/master/REQUIREMENTS.md

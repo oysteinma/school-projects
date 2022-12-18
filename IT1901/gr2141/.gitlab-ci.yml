@@ -1,8 +1,5 @@
 # Old CI/CD
 
-# # Based on
-# # https://gitlab.stud.idi.ntnu.no/oysteikt/h20-tdt4100-project/-/blob/master/pom.xml
-
 # image: maven:3-openjdk-16-slim
 
 # include:
