@@ -13,3 +13,4 @@ Some indivdual and group projects I have worked on during my time at NTNU.
   - [Project 1](IT2810/prosjekt-1) (Individual)
   - [Project 2](IT2810/prosjekt-2) (Group)
   - [Project 3](IT2810/prosjekt-3) (Group)
+  - [Project 4](IT2810/prosjekt-4) (Individual)
