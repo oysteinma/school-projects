@@ -6,12 +6,12 @@ Some indivdual and group projects I have worked on during my time at NTNU Trondh
 
 - **Fall 2022**
 
-  - [TDT4225](TDT4225): Very Large, Distributed Data Volumes
+  - [TDT4225][tdt4225-subjectpage]: Very Large, Distributed Data Volumes
 
     - [Project 1](TDT4225/databased2): MySQL (Group)
     - [Project 2](TDT4225/databased3): MongoDB (Group)
 
-  - [IT2810](IT2810): Web Development
+  - [IT2810][it2810-subjectpage]: Web Development
 
     - [Project 1](IT2810/prosjekt-1) (Individual)
     - [Project 2](IT2810/prosjekt-2) (Group)
@@ -20,29 +20,39 @@ Some indivdual and group projects I have worked on during my time at NTNU Trondh
 
 - **Spring 2022**
 
-  - [TDT4145](TDT4145): Data Modelling and Database Systems
+  - [TDT4145][tdt4145-subjectpage]: Data Modelling and Database Systems
 
     - [Project](TDT4145/databased): SQLite (Group)
 
-  - [TDT4140](TDT4140): Software Engineering
+  - [TDT4140][tdt4140-subjectpage]: Software Engineering
 
     - [Project](TDT4140/dishwish) (Group)
 
 - **Fall 2021**
 
-  - [IT1901](IT1901): Informatics, Project I
+  - [IT1901][it1901-subjectpage]: Informatics, Project I
 
     - [Mini Project](IT1901/oystmar) (Individual)
     - [Main Project](IT1901/gr2141) (Group)
 
 - **Spring 2021**
 
-  - [TDT4100](TDT4100): Object-Oriented Programming
+  - [TDT4100][tdt4100-subjectpage]: Object-Oriented Programming
 
     - [Project](TDT4100/h20-tdt4100-project) (Group)
 
 - **Fall 2020**
 
-  - [IT2805](IT2805): Web Technologies
+  - [IT2805][it2805-subjectpage]: Web Technologies
 
     - [Project](IT2805/revy) (Group)
+
+<!-- Links -->
+
+[tdt4225-subjectpage]: https://www.ntnu.edu/studies/courses/TDT4225#tab=omEmnet
+[it2810-subjectpage]: https://www.ntnu.edu/studies/courses/IT2810#tab=omEmnet
+[tdt4145-subjectpage]: https://www.ntnu.edu/studies/courses/TDT4145#tab=omEmnet
+[tdt4140-subjectpage]: https://www.ntnu.edu/studies/courses/TDT4140#tab=omEmnet
+[it1901-subjectpage]: https://www.ntnu.edu/studies/courses/IT1901#tab=omEmnet
+[tdt4100-subjectpage]: https://www.ntnu.edu/studies/courses/TDT4100#tab=omEmnet
+[it2805-subjectpage]: https://www.ntnu.edu/studies/courses/IT2805#tab=omEmnet
