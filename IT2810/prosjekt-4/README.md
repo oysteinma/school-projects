@@ -33,9 +33,6 @@ En mobil applikasjonen som lar deg søke/filtrere etter filmer. Du kan også lag
 
 <!-- Mye av det samme som forrige prosjekt -->
 
-I forrige prosjekt ble det skrevet mer utfyllende angående de diverse teknologiene som ble brukt.
-Hvis du har tilgang kan du se det [her](https://gitlab.stud.idi.ntnu.no/it2810-h22/Team-59/prosjekt-3/-/blob/main/README.md?plain=1).
-
 Tar i bruk GRAND-stacken. Fra forrige prosjekt ble det satt opp en database i neo4j som også blir
 brukt i dette prosjektet også. I frontend blir det brukt Apollo Client som gjør det lett å kommunisere
 med backend (Apollo Server). For state management blir det brukt Apollo Client sin state management.
