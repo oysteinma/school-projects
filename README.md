@@ -1,5 +1,13 @@
 # School Projects
 
+<p align="center">
+  <picture>
+    <img src="graphics/logo.png">
+  </picture>
+</p>
+
+---
+
 Some indivdual and group projects I have worked on during my time at NTNU Trondheim.
 
 **_NOTE:_** All projects are moved from GitLab to GitHub.
