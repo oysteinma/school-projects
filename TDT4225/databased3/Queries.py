@@ -149,9 +149,8 @@ class MongoMain:
             gained = 0
             for x, y in zip(v[0::], v[1::]):
                 difference = y - x
-                if (x == -777) or (y == -777) or (difference < 0):
-                    continue
-                gained += difference
+                if (x != -777) or (y != -777) or (difference > 0):
+                    gained += difference
 
             caluclated_gained[k] = gained
 

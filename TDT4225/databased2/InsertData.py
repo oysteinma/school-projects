@@ -20,11 +20,11 @@ class InsertData:
     # --------------------------------- Reading Helper Functions --------------------------------- #
 
     def read_root_label_id(self, path_label):
-        array = []
+        liste = []
         with open(path_label) as f:
             for line in f:
-                array.append(line.strip())
-        return array
+                liste.append(line.strip())
+        return liste
 
     def read_plt_start_end(self, path_plt):
         with open(path_plt) as file:
@@ -55,15 +55,15 @@ class InsertData:
         return trackpoints
 
     def read_label_start_end_transport(self, path_for_label):
-        list = []
+        liste = []
         with open(path_for_label) as file:
             for line in file.readlines()[1:]:
                 split_line = line.strip().split()
-                list.append((datetime.fromisoformat(split_line[0].replace(
+                liste.append((datetime.fromisoformat(split_line[0].replace(
                     "/", "-") + " " + split_line[1]), datetime.fromisoformat(
                     split_line[2].replace("/", "-") + " " + split_line[3]), split_line[4]))
 
-        return list
+        return liste
 
     # --------------------------------- Inserting Data --------------------------------- #
 
@@ -89,15 +89,14 @@ class InsertData:
                 for plt in files:
                     path_plt = root + "/" + plt
 
-                    if sum(1 for line in open(path_plt)) > 2506:
+                    if sum(1 for _ in open(path_plt)) > 2506:
                         continue
 
                     path_start, path_end = self.read_plt_start_end(
                         path_plt=path_plt)
 
                     if self.user_id not in has_labels:
-                        print(
-                            "Inserting Activity and TrackPoints for: " + self.user_id)
+
                         self.insert_activities(
                             None, path_start, path_end)
 
@@ -108,6 +107,7 @@ class InsertData:
                             trackpoints=trackpoints)
 
                     else:
+
                         all_labels = self.read_label_start_end_transport(
                             path_for_label=root[:-10] + "labels.txt")
 

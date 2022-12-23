@@ -21,12 +21,12 @@ class InsertData:
     # --------------------------------- Reading Helper Functions --------------------------------- #
 
     def read_root_label_id(self, path_label):
-        array = []
+        liste = []
         with open(path_label) as f:
             for line in f:
-                array.append(line.strip())
+                liste.append(line.strip())
 
-        return array
+        return liste
 
     def read_plt_start_end(self, path_plt):
         with open(path_plt) as file:
@@ -127,6 +127,7 @@ class InsertData:
                         self.all_tp_id_to_activity.clear()
 
                     else:
+
                         all_labels = self.read_label_start_end_transport(
                             path_for_label=root[:-10] + "labels.txt")
 
